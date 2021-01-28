@@ -58,6 +58,7 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(height: 50),
               RaisedButton(
+                color: Colors.amber,
                 onPressed: () {},
                 child: Text('CONVERTER'),
               ),
