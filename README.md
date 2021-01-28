@@ -1,4 +1,4 @@
-# conversor_de_moedas
+# Conversor_de_moedas
 Projeto de estudo com algumas modificações em relação ao tutorial original.
 
 Como base do estudo, segui tutorial realizado pela Flutterando, no seu canal do Youtube.
