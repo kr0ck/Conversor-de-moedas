@@ -43,8 +43,10 @@ class BoxMoedaComponente extends StatelessWidget {
       Expanded(
         flex: 2,
         child: TextField(
+          keyboardType: TextInputType.numberWithOptions(decimal: true),
           controller: controller,
           decoration: InputDecoration(
+            prefixText: '\$ ',
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.amber),
             ),
