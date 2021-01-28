@@ -45,8 +45,13 @@ class HomePage extends StatelessWidget {
                     flex: 2,
                     child: TextField(
                       decoration: InputDecoration(
-                          // labelText: 'Valor',
-                          ),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.amber),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.amber),
+                        ),
+                      ),
                     ),
                   ),
                 ]),
