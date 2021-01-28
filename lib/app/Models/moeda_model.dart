@@ -37,7 +37,7 @@ class MoedaModel {
         bitcoin: 0.0001,
       ),
       MoedaModel(
-        nome: "Real",
+        nome: "Bitcoin",
         real: 64116.51,
         dolar: 11351.30,
         euro: 9689.54,

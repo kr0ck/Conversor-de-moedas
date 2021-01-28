@@ -1,8 +1,18 @@
+import 'package:conversor_de_moedas/app/Models/moeda_model.dart';
 import 'package:flutter/material.dart';
 
 class BoxMoedaComponente extends StatelessWidget {
+  final List<MoedaModel> items;
+  final TextEditingController controller;
+  final void Function(MoedaModel model) onChanged;
+  final MoedaModel itemSeleciondado;
+
   const BoxMoedaComponente({
     Key key,
+    this.items,
+    this.controller,
+    this.onChanged,
+    this.itemSeleciondado,
   }) : super(key: key);
 
   @override
@@ -12,18 +22,18 @@ class BoxMoedaComponente extends StatelessWidget {
         flex: 1,
         child: SizedBox(
           height: 65,
-          child: DropdownButton(
+          child: DropdownButton<MoedaModel>(
+            value: itemSeleciondado,
             iconEnabledColor: Colors.amber,
             isExpanded: true,
             underline: Container(
               height: 1,
               color: Colors.amber,
             ),
-            items: [
-              DropdownMenuItem(child: Text('Real')),
-              DropdownMenuItem(child: Text('Dolar')),
-            ],
-            onChanged: (value) {},
+            items: items
+                .map((e) => DropdownMenuItem(value: e, child: Text(e.nome)))
+                .toList(),
+            onChanged: onChanged,
           ),
         ),
       ),
@@ -33,6 +43,7 @@ class BoxMoedaComponente extends StatelessWidget {
       Expanded(
         flex: 2,
         child: TextField(
+          controller: controller,
           decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.amber),

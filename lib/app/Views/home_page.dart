@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 
 import 'Componentes/box_moeda_componente.dart';
 
-class HomePage extends StatelessWidget {
-  final TextEditingController deTexto = TextEditingController();
-  final TextEditingController paraTexto = TextEditingController();
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   HomeController homeController;
 
-  HomePage() {
+  final TextEditingController deTexto = TextEditingController();
+
+  final TextEditingController paraTexto = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
     homeController = new HomeController(deTexto: deTexto, paraTexto: paraTexto);
   }
 
@@ -28,12 +37,30 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                BoxMoedaComponente(),
-                BoxMoedaComponente(),
+                BoxMoedaComponente(
+                    itemSeleciondado: homeController.deMoeda,
+                    items: homeController.moedas,
+                    onChanged: (model) {
+                      setState(() {
+                        homeController.deMoeda = model;
+                      });
+                    },
+                    controller: deTexto),
+                BoxMoedaComponente(
+                    itemSeleciondado: homeController.paraMoeda,
+                    items: homeController.moedas,
+                    onChanged: (model) {
+                      setState(() {
+                        homeController.paraMoeda = model;
+                      });
+                    },
+                    controller: paraTexto),
                 SizedBox(height: 50),
                 RaisedButton(
                   color: Colors.amber,
-                  onPressed: () {},
+                  onPressed: () {
+                    homeController.convertendo();
+                  },
                   child: Text('CONVERTER'),
                 ),
               ],
