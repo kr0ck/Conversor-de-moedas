@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Componentes/box_moeda_componente.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,43 +18,7 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
-              Row(children: [
-                Expanded(
-                  flex: 1,
-                  child: SizedBox(
-                    height: 65,
-                    child: DropdownButton(
-                      iconEnabledColor: Colors.amber,
-                      isExpanded: true,
-                      underline: Container(
-                        height: 1,
-                        color: Colors.amber,
-                      ),
-                      items: [
-                        DropdownMenuItem(child: Text('Real')),
-                        DropdownMenuItem(child: Text('Dolar')),
-                      ],
-                      onChanged: (value) {},
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  flex: 2,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.amber),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.amber),
-                      ),
-                    ),
-                  ),
-                ),
-              ]),
+              BoxModedaComponente(),
               SizedBox(height: 50),
               RaisedButton(
                 color: Colors.amber,
