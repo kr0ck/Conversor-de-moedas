@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BoxModedaComponente extends StatelessWidget {
-  const BoxModedaComponente({
+class BoxMoedaComponente extends StatelessWidget {
+  const BoxMoedaComponente({
     Key key,
   }) : super(key: key);
 

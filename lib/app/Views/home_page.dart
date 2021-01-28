@@ -28,8 +28,8 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                BoxModedaComponente(),
-                BoxModedaComponente(),
+                BoxMoedaComponente(),
+                BoxMoedaComponente(),
                 SizedBox(height: 50),
                 RaisedButton(
                   color: Colors.amber,
