@@ -21,9 +21,21 @@ class HomePage extends StatelessWidget {
                 child: Row(children: [
                   Expanded(
                     flex: 1,
-                    child: DropdownButton(
-                      items: [],
-                      onChanged: (value) {},
+                    child: SizedBox(
+                      height: 65,
+                      child: DropdownButton(
+                        iconEnabledColor: Colors.amber,
+                        isExpanded: true,
+                        underline: Container(
+                          height: 1,
+                          color: Colors.amber,
+                        ),
+                        items: [
+                          DropdownMenuItem(child: Text('Real')),
+                          DropdownMenuItem(child: Text('Dolar')),
+                        ],
+                        onChanged: (value) {},
+                      ),
                     ),
                   ),
                   SizedBox(
